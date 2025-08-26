@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <div class="app">
+      <h1>Email Bot</h1>
+
+      <section class="card">
+        <h2>Generate Questions</h2>
+        <form id="qform">
+          <label>Choose .docx</label>
+          <select id="file_select" name="file_name"></select>
+
+          <label>Scenario</label>
+          <textarea name="scenario" rows="3" placeholder="Explain the scenario..."></textarea>
+
+          <label>CEFR Level</label>
+          <select name="cefr_level">
+            <option value="">-- select --</option>
+            <option>A1</option><option>A2</option>
+            <option>B1</option><option>B2</option>
+            <option>C1</option><option>C2</option>
+          </select>
+
+          <button type="submit">Generate</button>
+        </form>
+        <pre id="qresult" class="result"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Evaluate Email</h2>
+        <form id="eform">
+          <label>Scenario</label>
+          <textarea name="scenario" rows="2"></textarea>
+
+          <label>Scenario Question</label>
+          <textarea name="scenario_question" rows="2"></textarea>
+
+          <label>CEFR Level</label>
+          <select name="cefr_level">
+            <option value="">-- select --</option>
+            <option>A1</option><option>A2</option>
+            <option>B1</option><option>B2</option>
+            <option>C1</option><option>C2</option>
+          </select>
+
+          <label>Email Content</label>
+          <textarea name="email_content" rows="6"></textarea>
+
+          <button type="submit">Evaluate</button>
+        </form>
+        <pre id="eresult" class="result"></pre>
+      </section>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

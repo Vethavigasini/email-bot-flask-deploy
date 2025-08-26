@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+data.db
+.env
+intern-service-account.json
+.DS_Store
+downloads/
+*.docx
